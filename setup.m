@@ -1,2 +1,5 @@
 % SETUP  Add the required search paths to MATLAB
-if exist('vl_version') ~= 3, run('vlfeat/toolbox/vl_setup') ; end
+addpath('~/vlfeat/toolbox')
+if exist('vl_version') ~= 3
+  vl_setup % octave din't work with run('vl_setup')
+end
