@@ -1,13 +1,9 @@
 % EXERCISE1: basic training and testing of a classifier
+% encoding=(bovw,vlad,fv)
+% category=(motorbike,aeroplane,person)
+% figinit=integer 0 -> no figures
+% helliger=(T,F)
 
-% setup MATLAB to use our software
-setup ;
-
-% --------------------------------------------------------------------
-% Stage A: Data Preparation
-% --------------------------------------------------------------------
-
-% Load training data
 encoding = 'bovw' ;
 %encoding = 'vlad' ;
 %encoding = 'fv' ;
@@ -15,6 +11,42 @@ encoding = 'bovw' ;
 category = 'motorbike' ;
 %category = 'aeroplane' ;
 %category = 'person' ;
+figinit = 1;
+
+hellinger=false;
+
+arg_list = argv ();
+for i = 1:nargin
+  key_value = strsplit(arg_list{i},'=');
+  switch(key_value{1})
+    case 'encoding'
+      encoding=key_value{2};
+    case 'category'
+      category=key_value{2};
+    case 'figinit'
+      figinit=int8(str2double(key_value{2}));
+    case 'hellinger'
+      hellinger=(strcmpi(key_value{2},'t')==1);
+  endswitch
+
+endfor
+
+encoding
+category
+hellinger
+figinit
+showfigs = (figinit > 0)
+
+% setup MATLAB to use our software
+setup ;
+
+
+
+% --------------------------------------------------------------------
+% Stage A: Data Preparation
+% --------------------------------------------------------------------
+
+% Load training data
 
 pos = load(['data/' category '_train_' encoding '.mat']) ;
 neg = load(['data/background_train_' encoding '.mat']) ;
@@ -58,6 +90,11 @@ fprintf('Number of testing images: %d positive, %d negative\n', ...
 % ** insert code here for the Hellinger kernel using  **
 % ** the training histograms and testHistograms       **
 
+if hellinger
+  histograms=sqrt(histograms);
+  testHistograms = sqrt(testHistograms);
+endif
+
 % L2 normalize the histograms before running the linear SVM
 histograms = bsxfun(@times, histograms, 1./sqrt(sum(histograms.^2,1))) ;
 testHistograms = bsxfun(@times, testHistograms, 1./sqrt(sum(testHistograms.^2,1))) ;
@@ -76,12 +113,17 @@ C = 10 ;
 scores = w' * histograms + bias ;
 
 % Visualize the ranked list of images
-figure(1) ; clf ; set(1,'name','Ranked training images (subset)') ;
-displayRankedImageList(names, scores)  ;
-
-% Visualize the precision-recall curve
-figure(2) ; clf ; set(2,'name','Precision-recall on train data') ;
-vl_pr(labels, scores) ;
+if showfigs
+  fig=figinit;
+  % use lastwarn()
+  %'set: allowing background to match text property backgroundcolor')
+  figure(fig) ; clf ; set(fig++,'name','Ranked training images (subset)') ;
+  
+  displayRankedImageList(names, scores);
+  % Visualize the precision-recall curve
+  figure(fig) ; clf ; set(fig++,'name','Precision-recall on train data') ;
+  vl_pr(labels, scores) ;
+end
 
 % --------------------------------------------------------------------
 % Stage C: Classify the test images and assess the performance
@@ -90,17 +132,18 @@ vl_pr(labels, scores) ;
 % Test the linear SVM
 testScores = w' * testHistograms + bias ;
 
-% Visualize the ranked list of images
-figure(3) ; clf ; set(3,'name','Ranked test images (subset)') ;
-displayRankedImageList(testNames, testScores)  ;
+if showfigs
+  % Visualize the ranked list of images
+  figure(fig) ; clf ; set(fig++,'name','Ranked test images (subset)') ;
+  displayRankedImageList(testNames, testScores)  ;
+  % Visualize visual words by relevance on the first image
+  [~,best] = max(testScores) ;
+  % displayRelevantVisualWords(testNames{best},w)
+  % Visualize the precision-recall curve
+  figure(fig) ; clf ; set(fig++,'name','Precision-recall on test data') ;
+  vl_pr(testLabels, testScores) ;
 
-% Visualize visual words by relevance on the first image
-% [~,best] = max(testScores) ;
-% displayRelevantVisualWords(testNames{best},w)
-
-% Visualize the precision-recall curve
-figure(4) ; clf ; set(4,'name','Precision-recall on test data') ;
-vl_pr(testLabels, testScores) ;
+endif
 
 % Print results
 [drop,drop,info] = vl_pr(testLabels, testScores) ;
@@ -108,3 +151,7 @@ fprintf('Test AP: %.2f\n', info.auc) ;
 
 [drop,perm] = sort(testScores,'descend') ;
 fprintf('Correctly retrieved in the top 36: %d\n', sum(testLabels(perm(1:36)) > 0)) ;
+
+if showfigs
+  pause()
+endif

@@ -1,0 +1,312 @@
+encoding = bovw
+category = motorbike
+hellinger = 0
+figinit = 0
+showfigs = 0
+Number of training images: 120 positive, 1019 negative
+Number of testing images: 125 positive, 1077 negative
+vl_svmtrain: parameters (verbosity: 1)
+	data dimension: 2048
+	num samples: 1139
+	lambda: 8.77963e-05 (C equivalent: 10)
+	loss function: hinge
+	max num iterations: 113900
+	epsilon: 0.01
+	diagnostic frequency: 1139
+	using custom weights: no
+	bias multiplier: 1
+	solver: sdca
+vl_svmtrain: iteration: 35309 (epoch: 31)
+	time elapsed: 0.341423
+	objective: 0.148464 (regul: 0.0378793, loss: 0.110585)
+	dual objective: 0.139613 (dual loss: 0.177492)
+	duality gap: 0.00885167
+	status: converged
+Test AP: 0.48
+Correctly retrieved in the top 36: 24
+encoding = bovw
+category = motorbike
+hellinger =  1
+figinit = 0
+showfigs = 0
+Number of training images: 120 positive, 1019 negative
+Number of testing images: 125 positive, 1077 negative
+vl_svmtrain: parameters (verbosity: 1)
+	data dimension: 2048
+	num samples: 1139
+	lambda: 8.77963e-05 (C equivalent: 10)
+	loss function: hinge
+	max num iterations: 113900
+	epsilon: 0.01
+	diagnostic frequency: 1139
+	using custom weights: no
+	bias multiplier: 1
+	solver: sdca
+vl_svmtrain: iteration: 37587 (epoch: 33)
+	time elapsed: 0.328646
+	objective: 0.123056 (regul: 0.0521346, loss: 0.0709209)
+	dual objective: 0.115426 (dual loss: 0.167561)
+	duality gap: 0.00762913
+	status: converged
+Test AP: 0.63
+Correctly retrieved in the top 36: 29
+encoding = vlad
+category = motorbike
+hellinger = 0
+figinit = 0
+showfigs = 0
+Number of training images: 120 positive, 1019 negative
+Number of testing images: 125 positive, 1077 negative
+vl_svmtrain: parameters (verbosity: 1)
+	data dimension: 10240
+	num samples: 1139
+	lambda: 8.77963e-05 (C equivalent: 10)
+	loss function: hinge
+	max num iterations: 113900
+	epsilon: 0.01
+	diagnostic frequency: 1139
+	using custom weights: no
+	bias multiplier: 1
+	solver: sdca
+vl_svmtrain: iteration: 20502 (epoch: 18)
+	time elapsed: 0.806013
+	objective: 0.0362737 (regul: 0.0269858, loss: 0.00928788)
+	dual objective: 0.0296099 (dual loss: 0.0565957)
+	duality gap: 0.00666385
+	status: converged
+Test AP: 0.69
+Correctly retrieved in the top 36: 34
+encoding = fv
+category = motorbike
+hellinger = 0
+figinit = 0
+showfigs = 0
+Number of training images: 120 positive, 1019 negative
+Number of testing images: 125 positive, 1077 negative
+vl_svmtrain: parameters (verbosity: 1)
+	data dimension: 20480
+	num samples: 1139
+	lambda: 8.77963e-05 (C equivalent: 10)
+	loss function: hinge
+	max num iterations: 113900
+	epsilon: 0.01
+	diagnostic frequency: 1139
+	using custom weights: no
+	bias multiplier: 1
+	solver: sdca
+vl_svmtrain: iteration: 22780 (epoch: 20)
+	time elapsed: 1.979253
+	objective: 0.0481126 (regul: 0.0292747, loss: 0.0188379)
+	dual objective: 0.0392995 (dual loss: 0.0685742)
+	duality gap: 0.00881314
+	status: converged
+Test AP: 0.73
+Correctly retrieved in the top 36: 34
+encoding = bovw
+category = aeroplane
+hellinger = 0
+figinit = 0
+showfigs = 0
+Number of training images: 112 positive, 1019 negative
+Number of testing images: 126 positive, 1077 negative
+vl_svmtrain: parameters (verbosity: 1)
+	data dimension: 2048
+	num samples: 1131
+	lambda: 8.84173e-05 (C equivalent: 10)
+	loss function: hinge
+	max num iterations: 113100
+	epsilon: 0.01
+	diagnostic frequency: 1131
+	using custom weights: no
+	bias multiplier: 1
+	solver: sdca
+vl_svmtrain: iteration: 30537 (epoch: 27)
+	time elapsed: 0.289031
+	objective: 0.178777 (regul: 0.019106, loss: 0.159671)
+	dual objective: 0.169489 (dual loss: 0.188595)
+	duality gap: 0.00928743
+	status: converged
+Test AP: 0.55
+Correctly retrieved in the top 36: 24
+encoding = bovw
+category = aeroplane
+hellinger =  1
+figinit = 0
+showfigs = 0
+Number of training images: 112 positive, 1019 negative
+Number of testing images: 126 positive, 1077 negative
+vl_svmtrain: parameters (verbosity: 1)
+	data dimension: 2048
+	num samples: 1131
+	lambda: 8.84173e-05 (C equivalent: 10)
+	loss function: hinge
+	max num iterations: 113100
+	epsilon: 0.01
+	diagnostic frequency: 1131
+	using custom weights: no
+	bias multiplier: 1
+	solver: sdca
+vl_svmtrain: iteration: 30537 (epoch: 27)
+	time elapsed: 0.296565
+	objective: 0.0778723 (regul: 0.0348545, loss: 0.0430178)
+	dual objective: 0.0696829 (dual loss: 0.104537)
+	duality gap: 0.00818941
+	status: converged
+Test AP: 0.71
+Correctly retrieved in the top 36: 31
+encoding = vlad
+category = aeroplane
+hellinger = 0
+figinit = 0
+showfigs = 0
+Number of training images: 112 positive, 1019 negative
+Number of testing images: 126 positive, 1077 negative
+vl_svmtrain: parameters (verbosity: 1)
+	data dimension: 10240
+	num samples: 1131
+	lambda: 8.84173e-05 (C equivalent: 10)
+	loss function: hinge
+	max num iterations: 113100
+	epsilon: 0.01
+	diagnostic frequency: 1131
+	using custom weights: no
+	bias multiplier: 1
+	solver: sdca
+vl_svmtrain: iteration: 13572 (epoch: 12)
+	time elapsed: 0.618297
+	objective: 0.028192 (regul: 0.0161526, loss: 0.0120394)
+	dual objective: 0.018585 (dual loss: 0.0347377)
+	duality gap: 0.00960699
+	status: converged
+Test AP: 0.75
+Correctly retrieved in the top 36: 36
+encoding = fv
+category = aeroplane
+hellinger = 0
+figinit = 0
+showfigs = 0
+Number of training images: 112 positive, 1019 negative
+Number of testing images: 126 positive, 1077 negative
+vl_svmtrain: parameters (verbosity: 1)
+	data dimension: 20480
+	num samples: 1131
+	lambda: 8.84173e-05 (C equivalent: 10)
+	loss function: hinge
+	max num iterations: 113100
+	epsilon: 0.01
+	diagnostic frequency: 1131
+	using custom weights: no
+	bias multiplier: 1
+	solver: sdca
+vl_svmtrain: iteration: 31668 (epoch: 28)
+	time elapsed: 2.622076
+	objective: 0.0876979 (regul: 0.0363811, loss: 0.0513167)
+	dual objective: 0.0778989 (dual loss: 0.11428)
+	duality gap: 0.00979895
+	status: converged
+Test AP: 0.70
+Correctly retrieved in the top 36: 32
+encoding = bovw
+category = person
+hellinger = 0
+figinit = 0
+showfigs = 0
+Number of training images: 1025 positive, 1019 negative
+Number of testing images: 983 positive, 1077 negative
+vl_svmtrain: parameters (verbosity: 1)
+	data dimension: 2048
+	num samples: 2044
+	lambda: 4.89237e-05 (C equivalent: 10)
+	loss function: hinge
+	max num iterations: 204400
+	epsilon: 0.01
+	diagnostic frequency: 2044
+	using custom weights: no
+	bias multiplier: 1
+	solver: sdca
+vl_svmtrain: iteration: 91980 (epoch: 45)
+	time elapsed: 0.794348
+	objective: 0.592365 (regul: 0.102609, loss: 0.489756)
+	dual objective: 0.583762 (dual loss: 0.686371)
+	duality gap: 0.00860292
+	status: converged
+Test AP: 0.71
+Correctly retrieved in the top 36: 33
+encoding = bovw
+category = person
+hellinger =  1
+figinit = 0
+showfigs = 0
+Number of training images: 1025 positive, 1019 negative
+Number of testing images: 983 positive, 1077 negative
+vl_svmtrain: parameters (verbosity: 1)
+	data dimension: 2048
+	num samples: 2044
+	lambda: 4.89237e-05 (C equivalent: 10)
+	loss function: hinge
+	max num iterations: 204400
+	epsilon: 0.01
+	diagnostic frequency: 2044
+	using custom weights: no
+	bias multiplier: 1
+	solver: sdca
+vl_svmtrain: iteration: 98112 (epoch: 48)
+	time elapsed: 0.802493
+	objective: 0.418311 (regul: 0.117513, loss: 0.300798)
+	dual objective: 0.408829 (dual loss: 0.526343)
+	duality gap: 0.00948179
+	status: converged
+Test AP: 0.77
+Correctly retrieved in the top 36: 33
+encoding = vlad
+category = person
+hellinger = 0
+figinit = 0
+showfigs = 0
+Number of training images: 1025 positive, 1019 negative
+Number of testing images: 983 positive, 1077 negative
+vl_svmtrain: parameters (verbosity: 1)
+	data dimension: 10240
+	num samples: 2044
+	lambda: 4.89237e-05 (C equivalent: 10)
+	loss function: hinge
+	max num iterations: 204400
+	epsilon: 0.01
+	diagnostic frequency: 2044
+	using custom weights: no
+	bias multiplier: 1
+	solver: sdca
+vl_svmtrain: iteration: 79716 (epoch: 39)
+	time elapsed: 3.688128
+	objective: 0.178968 (regul: 0.128073, loss: 0.0508952)
+	dual objective: 0.169108 (dual loss: 0.297181)
+	duality gap: 0.00986029
+	status: converged
+Test AP: 0.76
+Correctly retrieved in the top 36: 36
+encoding = fv
+category = person
+hellinger = 0
+figinit = 0
+showfigs = 0
+Number of training images: 1025 positive, 1019 negative
+Number of testing images: 983 positive, 1077 negative
+vl_svmtrain: parameters (verbosity: 1)
+	data dimension: 20480
+	num samples: 2044
+	lambda: 4.89237e-05 (C equivalent: 10)
+	loss function: hinge
+	max num iterations: 204400
+	epsilon: 0.01
+	diagnostic frequency: 2044
+	using custom weights: no
+	bias multiplier: 1
+	solver: sdca
+vl_svmtrain: iteration: 85848 (epoch: 42)
+	time elapsed: 7.730739
+	objective: 0.173451 (regul: 0.122981, loss: 0.0504702)
+	dual objective: 0.165295 (dual loss: 0.288276)
+	duality gap: 0.00815525
+	status: converged
+Test AP: 0.77
+Correctly retrieved in the top 36: 33
