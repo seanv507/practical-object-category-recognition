@@ -50,7 +50,8 @@ for k = 1:length(perm)
     u2 = min(size(im,2),u0+delta) ;
     v1 = max(1,v0-delta) ;
     v2 = min(size(im,1),v0+delta) ;
-    patches{j} = imresize(im(v1:v2,u1:u2,:),[32 32]) ;
+    % octave expects integer? 
+    patches{j} = imresize(uint8(255*im(v1:v2,u1:u2,:)),[32 32]) ;
   end
 
   if isempty(patches)
