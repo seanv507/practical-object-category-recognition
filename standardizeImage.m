@@ -5,7 +5,7 @@ function im = standardizeImage(im)
 
 % Author: Andrea Vedaldi
 
-if isstr(im)
+if ischar(im)
   if exist(im, 'file')
     fullPath = im ;
   else
