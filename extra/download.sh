@@ -9,7 +9,7 @@ if test ! -d data/tmp/VOCdevkit
 then
     (
         cd data/tmp
-        wget -c -nc http://pascallin.ecs.soton.ac.uk/challenges/VOC/voc2007/VOCtrainval_06-Nov-2007.tar
+        wget -c -nc http://host.robots.ox.ac.uk/pascal/VOC/voc2007/VOCtrainval_06-Nov-2007.tar
         tar xzvf VOCtrainval_06-Nov-2007.tar
     )
 fi
